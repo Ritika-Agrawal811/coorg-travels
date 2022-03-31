@@ -28,19 +28,55 @@
   </head>
   <body>
     <nav>
-      <a href="#home" class="nav-link"
+      <a href="#home" class="nav-link-logo"
         ><i class="fa-solid fa-mountain"></i>Coorg Travels
       </a>
 
       <div>
-        <a href="" class="nav-link">Home</a>
-        <a href="" class="nav-link">Food</a>
-        <a href="" class="nav-link">Culture</a>
-        <a href="" class="nav-link">Places to Visit</a>
+        <a href="#home" class="nav-link slide-up-hover" data-content="Home"
+          >Home</a
+        >
+        <a href="#food" class="nav-link slide-up-hover" data-content="Food"
+          >Food</a
+        >
+        <a
+          href="#culture"
+          class="nav-link slide-up-hover"
+          data-content="Culture"
+          >Culture</a
+        >
+        <a
+          href="#places"
+          class="nav-link slide-up-hover"
+          data-content="Places to Visit"
+          >Places to Visit</a
+        >
       </div>
     </nav>
-    <header class="flex-column-center">
-      <h1>Coorg: Scotland of India</h1>
+    <header class="flex-column-center" id="home">
+      <h1>
+        <span>C</span>
+        <span>o</span>
+        <span>o</span>
+        <span>r</span>
+        <span>g</span>
+        <span>:</span>
+        <span>S</span>
+        <span>c</span>
+        <span>o</span>
+        <span>t</span>
+        <span>l</span>
+        <span>a</span>
+        <span>n</span>
+        <span>d</span>
+        <span>o</span>
+        <span>f</span>
+        <span>I</span>
+        <span>n</span>
+        <span>d</span>
+        <span>i</span>
+        <span>a</span>
+      </h1>
       <p>
         One of the most affluent hill stations of Karnataka. It is famous for
         its breathtaking greenery, mountain views and coffee plantations. It
@@ -51,7 +87,7 @@
       <button class="explore-btn">Explore</button>
     </header>
 
-    <section class="food-section">
+    <section class="food-section" id="food">
       <div class="food-intro-section">
         <div class="flex-column-center p-2 text-center align-center">
           <h2>Coorg Cuisine</h2>
@@ -106,7 +142,10 @@
           </p>
         </div>
 
-        <figure class="food-container food-container-1">
+        <figure
+          class="food-container food-container-1 view-modal"
+          onclick="viewModal('food1.jpg')"
+        >
           <img
             src="/images/food1.jpg"
             width="750"
@@ -115,7 +154,10 @@
           />
         </figure>
 
-        <figure class="food-container food-container-2">
+        <figure
+          class="food-container food-container-2 view-modal"
+          onclick="viewModal('food2.jpg')"
+        >
           <img
             src="/images/food2.jpg"
             width="200"
@@ -124,7 +166,10 @@
           />
         </figure>
 
-        <figure class="food-container food-container-3">
+        <figure
+          class="food-container food-container-3 view-modal"
+          onclick="viewModal('food-4.jpg')"
+        >
           <img
             src="/images/food-4.jpg"
             width="200"
@@ -150,7 +195,10 @@
           </p>
         </div>
 
-        <figure class="food-container food-container-4">
+        <figure
+          class="food-container food-container-4 view-modal"
+          onclick="viewModal('food-3.jpg')"
+        >
           <img
             src="/images/food-3.jpg"
             width="200"
@@ -173,7 +221,7 @@
       </div>
     </section>
 
-    <section class="culture">
+    <section class="culture" id="culture">
       <div class="flex-column-center align-center border-right">
         <h2 class="culture-title text-blue">culture</h2>
       </div>
@@ -219,7 +267,7 @@
       </div>
     </section>
 
-    <section class="places-to-vist flex-column-center">
+    <section class="places-to-vist flex-column-center" id="places">
       <h2 class="text-center">Places to Visit</h2>
       <h3 class="curve-text text-blue text-center">
         Your Adventure begins here
@@ -227,7 +275,10 @@
 
       <div class="places-grid">
         <div class="place-card">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('tadiandamolGalleryContainer')"
+          >
             <img src="/images/Tadiandamol peak.jpg" class="place-img" />
           </figure>
 
@@ -240,9 +291,51 @@
               you with their scenic charm and serene ambience.
             </p>
           </div>
+
+          <div
+            class="place-gallery flex-column-center align-center"
+            id="tadiandamolGalleryContainer"
+          >
+            <div class="gallery-container">
+              <i
+                class="fa-solid fa-xmark"
+                onclick="closeGallery('tadiandamolGalleryContainer')"
+              ></i>
+              <div class="gallery-grid" id="tadiandamolGallery">
+                <figure class="gallery-img-container">
+                  <img src="/images/tadiandamol1.jpg" />
+                </figure>
+                <figure class="gallery-img-container active-image">
+                  <img src="/images/tadiandamol4.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/tadiandamol3.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/tadiandamol2.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/tadiandamol5.jpg" />
+                </figure>
+              </div>
+              <div class="gallery-icons">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="moveLeft('tadiandamolGallery')"
+                ></i>
+                <i
+                  class="fa-solid fa-chevron-right"
+                  onclick="moveRight('tadiandamolGallery')"
+                ></i>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="place-card">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('omkareshwaraGalleryContainer')"
+          >
             <img src="/images/Omkareshwara.jpg" class="place-img" />
           </figure>
 
@@ -256,9 +349,51 @@
               as architectural brilliance.
             </p>
           </div>
+
+          <div
+            class="place-gallery flex-column-center align-center"
+            id="omkareshwaraGalleryContainer"
+          >
+            <div class="gallery-container">
+              <i
+                class="fa-solid fa-xmark"
+                onclick="closeGallery('omkareshwaraGalleryContainer')"
+              ></i>
+              <div class="gallery-grid" id="omkareshwaraGallery">
+                <figure class="gallery-img-container">
+                  <img src="/images/omkareshwara1.jpg" />
+                </figure>
+                <figure class="gallery-img-container active-image">
+                  <img src="/images/omkareshwara2.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/omkareshwara3.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/omkareshwara4.jpeg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/omkareshwara5.jpg" />
+                </figure>
+              </div>
+              <div class="gallery-icons">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="moveLeft('omkareshwaraGallery')"
+                ></i>
+                <i
+                  class="fa-solid fa-chevron-right"
+                  onclick="moveRight('omkareshwaraGallery')"
+                ></i>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="place-card">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('mallalliGalleryContainer')"
+          >
             <img src="/images/Mallalli-Falls.jpg" class="place-img" />
           </figure>
 
@@ -272,9 +407,51 @@
               ranges counts among the tallest ones in South India.
             </p>
           </div>
+
+          <div
+            class="place-gallery flex-column-center align-center"
+            id="mallalliGalleryContainer"
+          >
+            <div class="gallery-container">
+              <i
+                class="fa-solid fa-xmark"
+                onclick="closeGallery('mallalliGalleryContainer')"
+              ></i>
+              <div class="gallery-grid" id="mallalliGallery">
+                <figure class="gallery-img-container">
+                  <img src="/images/mallalli1.jpg" />
+                </figure>
+                <figure class="gallery-img-container active-image">
+                  <img src="/images/mallalli2.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/mallalli3.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/mallalli4.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/mallalli5.jpg" />
+                </figure>
+              </div>
+              <div class="gallery-icons">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="moveLeft('mallalliGallery')"
+                ></i>
+                <i
+                  class="fa-solid fa-chevron-right"
+                  onclick="moveRight('mallalliGallery')"
+                ></i>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="place-card">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('rajaGalleryContainer')"
+          >
             <img src="/images/Raja’s-Tomb.jpg" class="place-img" />
           </figure>
 
@@ -288,12 +465,54 @@
               Rudrappa and was built in 1834.
             </p>
           </div>
+
+          <div
+            class="place-gallery flex-column-center align-center"
+            id="rajaGalleryContainer"
+          >
+            <div class="gallery-container">
+              <i
+                class="fa-solid fa-xmark"
+                onclick="closeGallery('rajaGalleryContainer')"
+              ></i>
+              <div class="gallery-grid" id="rajaGallery">
+                <figure class="gallery-img-container">
+                  <img src="/images/raja1.jpg" />
+                </figure>
+                <figure class="gallery-img-container active-image">
+                  <img src="/images/raja2.jpeg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/raja3.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/raja4.jpg" />
+                </figure>
+                <figure class="gallery-img-container">
+                  <img src="/images/raja5.jpg" />
+                </figure>
+              </div>
+              <div class="gallery-icons">
+                <i
+                  class="fa-solid fa-chevron-left"
+                  onclick="moveLeft('rajaGallery')"
+                ></i>
+                <i
+                  class="fa-solid fa-chevron-right"
+                  onclick="moveRight('rajaGallery')"
+                ></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="top-attractions">
         <div class="attraction">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('coffeeGalleryContainer')"
+          >
             <img src="/images/coffee-plantations.png" class="place-img" />
           </figure>
           <h3 class="bg-blue text-white text-center">Coffee Plantations</h3>
@@ -313,7 +532,10 @@
           </div>
         </div>
         <div class="attraction">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('trekkingGalleryContainer')"
+          >
             <img src="/images/Mandalpatti trek.jpg" class="place-img" />
           </figure>
           <h3 class="bg-peach text-center">Trekking</h3>
@@ -330,7 +552,10 @@
           </div>
         </div>
         <div class="attraction">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('campingGalleryContainer')"
+          >
             <img src="/images/camping.png" class="place-img" />
           </figure>
           <h3 class="bg-blue text-white text-center">Camping</h3>
@@ -347,7 +572,10 @@
           </div>
         </div>
         <div class="attraction">
-          <figure class="place-container">
+          <figure
+            class="place-container view-gallery"
+            onclick="openGallery('waterfallsGalleryContainer')"
+          >
             <img src="/images/abbey falls.jpg" class="place-img" />
           </figure>
           <h3 class="bg-peach text-center">Waterfalls</h3>
@@ -364,10 +592,164 @@
           </div>
         </div>
       </div>
+      <div
+        class="place-gallery flex-column-center align-center"
+        id="coffeeGalleryContainer"
+      >
+        <div class="gallery-container">
+          <i
+            class="fa-solid fa-xmark"
+            onclick="closeGallery('coffeeGalleryContainer')"
+          ></i>
+          <div class="gallery-grid" id="coffeeGallery">
+            <figure class="gallery-img-container">
+              <img src="/images/coffee1.jpg" />
+            </figure>
+            <figure class="gallery-img-container active-image">
+              <img src="/images/coffee2.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/coffee3.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/coffee4.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/coffee5.jpg" />
+            </figure>
+          </div>
+          <div class="gallery-icons">
+            <i
+              class="fa-solid fa-chevron-left"
+              onclick="moveLeft('coffeeGallery')"
+            ></i>
+            <i
+              class="fa-solid fa-chevron-right"
+              onclick="moveRight('coffeeGallery')"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div
+        class="place-gallery flex-column-center align-center"
+        id="trekkingGalleryContainer"
+      >
+        <div class="gallery-container">
+          <i
+            class="fa-solid fa-xmark"
+            onclick="closeGallery('trekkingGalleryContainer')"
+          ></i>
+          <div class="gallery-grid" id="trekkingGallery">
+            <figure class="gallery-img-container">
+              <img src="/images/trekking1.jpg" />
+            </figure>
+            <figure class="gallery-img-container active-image">
+              <img src="/images/trekking2.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/trekking3.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/trekking4.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/trekking5.jpg" />
+            </figure>
+          </div>
+          <div class="gallery-icons">
+            <i
+              class="fa-solid fa-chevron-left"
+              onclick="moveLeft('trekkingGallery')"
+            ></i>
+            <i
+              class="fa-solid fa-chevron-right"
+              onclick="moveRight('trekkingGallery')"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div
+        class="place-gallery flex-column-center align-center"
+        id="campingGalleryContainer"
+      >
+        <div class="gallery-container">
+          <i
+            class="fa-solid fa-xmark"
+            onclick="closeGallery('campingGalleryContainer')"
+          ></i>
+          <div class="gallery-grid" id="campingGallery">
+            <figure class="gallery-img-container">
+              <img src="/images/camping1.jpg" />
+            </figure>
+            <figure class="gallery-img-container active-image">
+              <img src="/images/camping2.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/camping3.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/camping4.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/camping5.jpg" />
+            </figure>
+          </div>
+          <div class="gallery-icons">
+            <i
+              class="fa-solid fa-chevron-left"
+              onclick="moveLeft('campingGallery')"
+            ></i>
+            <i
+              class="fa-solid fa-chevron-right"
+              onclick="moveRight('campingGallery')"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div
+        class="place-gallery flex-column-center align-center"
+        id="waterfallsGalleryContainer"
+      >
+        <div class="gallery-container">
+          <i
+            class="fa-solid fa-xmark"
+            onclick="closeGallery('waterfallsGalleryContainer')"
+          ></i>
+          <div class="gallery-grid" id="waterfallsGallery">
+            <figure class="gallery-img-container">
+              <img src="/images/waterfall1.jpg" />
+            </figure>
+            <figure class="gallery-img-container active-image">
+              <img src="/images/waterfall2.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/waterfall3.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/waterfall4.jpg" />
+            </figure>
+            <figure class="gallery-img-container">
+              <img src="/images/waterfall5.jpg" />
+            </figure>
+          </div>
+          <div class="gallery-icons">
+            <i
+              class="fa-solid fa-chevron-left"
+              onclick="moveLeft('waterfallsGallery')"
+            ></i>
+            <i
+              class="fa-solid fa-chevron-right"
+              onclick="moveRight('waterfallsGallery')"
+            ></i>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="flex-column-center align-center">
-      <div class="info-blocks border-left-right">
+    <section class="flex-column-center align-center info-blocks-container">
+      <div class="semi-circle semi-circle-1"></div>
+      <div class="semi-circle semi-circle-2"></div>
+      <div class="info-blocks border-left-right" id="howToReach">
         <h3 class="text-blue">How to Reach</h3>
 
         <ul type="dot">
@@ -402,7 +784,7 @@
         </ul>
       </div>
 
-      <div class="info-blocks border-left-right">
+      <div class="info-blocks border-left-right" id="bestTimeToVisit">
         <h3 class="text-blue">Best Time To Visit</h3>
 
         <ul type="dot">
@@ -438,8 +820,8 @@
         </ul>
       </div>
 
-      <div class="info-blocks border-left-right">
-        <h3 class="text-blue">Most Asked Questions</h3>
+      <div class="info-blocks border-left-right" id="mostAskedQuestions">
+        <h3 class="text-blue">Frequently Asked Questions</h3>
 
         <dl>
           <dt>
@@ -502,27 +884,39 @@
       <div class="upper-block">
         <div class="flex-column-center align-center">
           <ul>
-            <li>Home</li>
-            <li>Food</li>
-            <li>Culture</li>
-            <li>Places to Visit</li>
+            <li><a href="#home" class="underline-hover">Home</a></li>
+            <li><a href="#food" class="underline-hover">Food</a></li>
+            <li><a href="#culture" class="underline-hover">Culture</a></li>
+            <li>
+              <a href="#places" class="underline-hover">Places to Visit</a>
+            </li>
           </ul>
         </div>
 
         <div class="footer-border-left-right flex-column-center align-center">
           <ul>
-            <li>How to Reach</li>
-            <li>Best Time To Visit</li>
-            <li>Most Asked Questions</li>
+            <li>
+              <a href="#howToReach" class="underline-hover">How to Reach</a>
+            </li>
+            <li>
+              <a href="#bestTimeToVisit" class="underline-hover"
+                >Best Time To Visit</a
+              >
+            </li>
+            <li>
+              <a href="#mostAskedQuestions" class="underline-hover"
+                >Frequently Asked Questions</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="flex-column-center align-center">
           <ul>
-            <li>TERMS & CONDITIONS</li>
-            <li>PRIVACY POLICIES</li>
-            <li>COPYRIGHT POLICIES</li>
-            <li>SUPPORT</li>
+            <li><a href="" class="underline-hover">TERMS & CONDITIONS</a></li>
+            <li><a href="" class="underline-hover">PRIVACY POLICIES</a></li>
+            <li><a href="" class="underline-hover">COPYRIGHT POLICIES</a></li>
+            <li><a href="" class="underline-hover">SUPPORT</a></li>
           </ul>
         </div>
       </div>
@@ -544,5 +938,6 @@
         <p class="text-center">© 2022 Coorg Travels. All rights reserved.</p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
