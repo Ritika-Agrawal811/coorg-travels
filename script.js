@@ -29,16 +29,16 @@ function moveLeft(galleryName){
     gallery.removeChild(previousImage);
 
     // next image styling
-    nextImage.classList.remove('zoomInNext' , 'zoomOutPrevious');
-    nextImage.classList.add('active-image');
+    nextImage.classList.remove('zoomInNext' , 'zoomOutPreviousLeft' , 'zoomOutPreviousRight' , 'zoomInActiveRight');
+    nextImage.classList.add('active-image' , 'zoomInActiveLeft');
     nextImage.nextElementSibling.classList.add('zoomInNext');
 
     // current image styling
-    activeImage.classList.remove('active-image' , 'zoomInNext' , 'zoomOutPrevious' );
-    activeImage.classList.add('zoomOutPrevious');
+    activeImage.classList.remove('active-image' , 'zoomInNext' , 'zoomOutPreviousLeft', 'zoomOutPreviousRight' , 'zoomInActiveLeft','zoomInActiveRight' );
+    activeImage.classList.add('zoomOutPreviousLeft');
 
     // previous image styling
-    previousImage.classList.remove('zoomOutPrevious' , 'zoomInNext');
+    previousImage.classList.remove('zoomOutPreviousLeft' , 'zoomInNext' , 'zoomOutPreviousRight' , 'zoomInActiveLeft','zoomInActiveRight');
 
     gallery.append(previousImage);   
 
@@ -54,16 +54,16 @@ function moveRight(galleryName){
     gallery.removeChild(lastImage);
 
     // previous image styling
-    previousImage.classList.remove('zoomInNext' , 'zoomOutPrevious');
-    previousImage.classList.add('active-image');
+    previousImage.classList.remove('zoomInNext' , 'zoomOutPreviousLeft' , 'zoomInActiveLeft','zoomInActiveRight' );
+    previousImage.classList.add('active-image' ,'zoomInActiveRight');
    
 
     // current image styling
-    activeImage.classList.remove('active-image' , 'zoomInNext' , 'zoomOutPrevious');
-    activeImage.classList.add('zoomOutPrevious');
+    activeImage.classList.remove('active-image' , 'zoomInNext' , 'zoomOutPreviousRight', 'zoomOutPreviousLeft' , 'zoomInActiveLeft','zoomInActiveRight');
+    activeImage.classList.add('zoomOutPreviousRight');
 
     // last image styling   
-    lastImage.classList.remove('zoomOutPrevious' , 'zoomInNext');
+    lastImage.classList.remove('zoomOutPreviousRight' , 'zoomInNext', 'zoomOutPreviousLeft' , 'zoomInActiveLeft','zoomInActiveRight');
     lastImage.classList.add('zoomInNext');
     gallery.prepend(lastImage);
       
