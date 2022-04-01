@@ -32,7 +32,13 @@
         ><i class="fa-solid fa-mountain"></i>Coorg Travels
       </a>
 
-      <div>
+      <div
+        class="hamburger-menu"
+        onclick="showMobileMenu()"
+        id="hamburgerMenu"
+      ></div>
+
+      <div class="desktop-menu">
         <a href="#home" class="nav-link slide-up-hover" data-content="Home"
           >Home</a
         >
@@ -53,6 +59,32 @@
         >
       </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" class="mobile-link" onclick="closeMobileMenu()">Home</a>
+      <a href="#food" class="mobile-link" onclick="closeMobileMenu()">Food</a>
+      <a href="#culture" class="mobile-link" onclick="closeMobileMenu()"
+        >Culture</a
+      >
+      <a href="#places" class="mobile-link" onclick="closeMobileMenu()"
+        >Places to Visit</a
+      >
+
+      <a href="#howToReach" class="mobile-link" onclick="closeMobileMenu()"
+        >How to Reach</a
+      >
+
+      <a href="#bestTimeToVisit" class="mobile-link" onclick="closeMobileMenu()"
+        >Best Time To Visit</a
+      >
+
+      <a
+        href="#mostAskedQuestions"
+        class="mobile-link"
+        onclick="closeMobileMenu()"
+        >Frequently Asked Questions</a
+      >
+    </div>
     <header class="flex-column-center" id="home">
       <h1>
         <span>C</span>
@@ -830,7 +862,7 @@
         <dl>
           <dt>
             <div class="count text-blue">1</div>
-            Where is Coorg located? How far is Coorg from Bangalore?
+            Where is Coorg located?
           </dt>
           <dd>
             Coorg is a rural district in the Indian state of Karnataka. Situated
@@ -856,7 +888,7 @@
 
           <dt>
             <div class="count text-blue">3</div>
-            Can we do river rafting in Coorg? How much it will cost us?
+            Can we do river rafting in Coorg?
           </dt>
           <dd>
             River rafting is one of the most sought activities which you can do
@@ -870,7 +902,7 @@
 
           <dt>
             <div class="count text-blue">4</div>
-            Are there any famous monasteries in Coorg?
+            Are there any monasteries in Coorg?
           </dt>
           <dd>
             Coorg has many impressive monasteries established by the Buddhists

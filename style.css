@@ -282,6 +282,11 @@ p {
 
 /* nav bar */
 
+.hamburger-menu,
+.mobile-menu{
+  display:none;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -1334,6 +1339,86 @@ h1{
 @media(max-width:424px){
   html{
     font-size:12px;
+    scroll-behavior: smooth;
+  }
+
+.nav-link-logo {
+    margin: 0;
+ }
+
+  .desktop-menu{
+    display:none;
+  }
+
+  .hamburger-menu{
+    display:block;
+    width:1.5em;
+    height:2px;
+    background-color:#000;
+    position:relative;
+    border-radius:20px;
+    transition: all 500ms ease-in-out;
+  }
+
+  .hamburger-menu::before,
+  .hamburger-menu::after{
+    content:"";
+    position:absolute;
+    width:0.75em;
+    height:1.5px;
+    background-color: #000;
+    border-radius:20px;
+    transition: all 500ms ease-in-out;
+  }
+
+  .hamburger-menu::before{
+    left:0;
+    top:-0.7em;
+  }
+
+  .hamburger-menu::after{   
+    right:0;
+    bottom:-0.7em;
+    
+  }
+
+  .hamburger-menu.open{
+    transform:rotate(-45deg);
+    height:1.5px;
+  }
+
+  .hamburger-menu.open::before{
+    transform:rotate(90deg) translate(0.325em,-0.4em);
+  }
+
+  .hamburger-menu.open::after{
+    transform:rotate(-90deg) translate(0.325em,-0.35em);
+  }
+
+  .mobile-menu{
+    display:block;
+    position:fixed;
+    width:100%;
+    height:93vh;
+    background-color: #f8f8fc;
+    top:-100%;
+    left:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 750ms ease-in-out;
+    z-index:5;
+  }
+
+  .mobile-link{
+    color:#000;
+    text-decoration: none;
+    font-size:1.2rem;
+  }
+
+  .mobile-menu.open{
+    top:4em;
   }
 
   header {
@@ -1418,7 +1503,7 @@ h1{
 
 .modal.open {
   display: grid;
-  grid-template: 10% 80% 10% / 10% 80% 10%;
+  grid-template: 5% 90% 5% / 5% 90% 5%;
   place-items: center;
 }
 
@@ -1509,7 +1594,7 @@ h1{
 }
 
 .info-blocks dl dt {
-  font-size: 1em;
+  font-size: 1.15em;
 }
 
 .count {
@@ -1544,7 +1629,7 @@ h1{
 }
 
 .bottom-block h3 {
-  width: 80%;
+  width: 90%;
   background: linear-gradient( 90deg, transparent 25%, #325c74 25%, #325c74 75%, transparent 75% ), 
   linear-gradient(transparent 45%, #b0e0e6 45%, #b0e0e6 50%, transparent 50%);
 }
@@ -1685,6 +1770,144 @@ h1{
 } 
 }
 
-@media(min-width:320px) and (max-width:375px){
+@media(min-width:320px) and (max-width:376px){
+
+
+  h1{ 
+    font-size:2rem;
+    text-align:center;
+  }
+
+  .culture-card {
+    position: absolute;
+    width: 80%;
+    height: 95%;
+    display: grid;
+    grid-template: 60% 40% / 100%;
+  }
+  
+  .info-blocks {
+    width: 95%;
+    padding: 1.5em;
+  }
+  
+  .upper-block {
+    width: 95%;
+  }
+  
+  .upper-block .footer-div ul li{
+    margin:1em;
+  }
+
+  .bottom-block h3 {
+    width: 95%;
+    background: linear-gradient( 90deg, transparent 20%, #325c74 20%, #325c74 80%, transparent 80% ), 
+    linear-gradient(transparent 45%, #b0e0e6 45%, #b0e0e6 50%, transparent 50%);
+  }
+
+   /* place gallery */
+
+ .gallery-grid {
+  margin-left:-9em;
+}
  
+}
+
+@media(max-width:320px){
+  h1{
+    font-size:1.65rem;
+  }
+
+  .food-intro-section {
+    height: 110vh;
+    display: grid;
+    grid-template: 1.5fr 1fr / 100%;
+  }
+  
+  .food-carousel{
+    grid-row:1/2;
+    
+  }
+  
+  .food-carousel-block {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+  }
+  
+
+  .ring {
+    position: absolute;
+    width: 35em;
+    height: 35em;
+    border: 4em solid #325c74;
+    top: -17em;
+    right: -17em;
+  }
+
+  .culture-title {
+    font-size: 4rem;
+    
+}
+
+.culture-card {
+  position: absolute;
+  width: 85%;
+  height: 95%;
+  display: grid;
+  grid-template: 60% 40% / 100%;
+}
+
+.places-grid {
+  width: 95%;
+}
+
+.top-attractions {
+  height: auto;
+  width: 95%;
+  position: relative;
+  display: grid;
+  grid-template: 500px 500px 500px 500px / 100%;
+  margin-top: 3em;
+  gap:1em;
+}
+
+.attraction {
+  z-index: 4;
+  display: grid;
+  grid-template: 50% 10% 40%/100%;
+}
+
+.upper-block {
+  width: 95%;
+}
+
+.upper-block .footer-div ul li{
+  margin:0.75em;
+}
+
+.bottom-block h3 {
+  width: 95%;
+  background: linear-gradient( 90deg, transparent 15%, #325c74 15%, #325c74 85%, transparent 85% ), 
+  linear-gradient(transparent 45%, #b0e0e6 45%, #b0e0e6 50%, transparent 50%);
+}
+
+ /* place gallery */
+
+ .gallery-grid {
+  margin-left:-9.5em;
+}
+
+.gallery-img-container {
+  width: 100px;
+  margin: 1em;
+  opacity: 0.85;
+  
+}
+
+.active-image {
+  width: 250px;
+  
+}
+  
 }

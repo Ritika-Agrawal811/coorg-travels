@@ -84,3 +84,22 @@ function openGallery(galleryId){
     gallery.classList.add('showGallery');
 }
 
+// show mobile side menu
+let hamburgerMenu = document.getElementById('hamburgerMenu');
+let mobileMenu = document.getElementById('mobileMenu');
+function showMobileMenu(){
+    
+   hamburgerMenu.classList.toggle('open');
+   mobileMenu.classList.toggle('open');
+    
+}
+
+function closeMobileMenu(){
+
+    setTimeout(()=>{
+        hamburgerMenu.classList.remove('open');
+        mobileMenu.classList.remove('open');
+    }, 600)
+   
+}
+
