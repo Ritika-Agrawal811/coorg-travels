@@ -285,10 +285,12 @@ p {
 nav {
   position: fixed;
   width: 100%;
+  height:4em;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background-color: #f8f8fc;
-  padding: 1em;
+  padding:0 1em;
   z-index: 10;
   box-shadow: 0 0 0.25em #aaa;
 }
@@ -768,6 +770,13 @@ footer ul li {
   grid-template: 100% / repeat(3, 1fr);
 }
 
+.upper-block .footer-div{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
 .footer-border-left-right {
   border: 2px solid #b0e0e6;
   border-top: none;
@@ -1084,23 +1093,18 @@ footer ul li {
     position: absolute;
     width: 60em;
     height: 60em;
-    border: 6em solid #325c74;
-    outline: 0.25em solid #b0e0e6;
-    border-radius: 50%;
     top: -30em;
     right: -30em;
-    animation: rotate 8s ease-in-out infinite;
   }
 
   .modal img {
-    width:100%;
-    height: auto;
-    
+    grid-column:1/-1;
+    grid-row: 2/3;
   }
 
   .modal.open {
     display: grid;
-    grid-template: 100% / 10% 80% 10%;
+    grid-template: 10% 80% 10% / 100%;
     place-items: center;
   }
 
@@ -1172,8 +1176,42 @@ footer ul li {
     font-size:12px;
   }
 
-  .culture {
-   
+  header {
+    height: 100vh;
+    background-image: url(/images/header-image.jpg);
+    padding-left: 2em;
+    background-attachment: fixed;
+    align-items: center;
+}
+
+h1{
+  font-size:3.5rem;
+}
+
+  header p {
+    width: 70%;
+    color: #fff;
+    font-size: 1.15rem;
+    text-align:center;
+}
+
+.ring {
+  position: absolute;
+  width: 55em;
+  height: 55em;
+  border: 6em solid #325c74;
+  outline: 0.25em solid #b0e0e6;
+  border-radius: 50%;
+  top: -27.5em;
+  right: -27.5em;
+  animation: rotate 8s ease-in-out infinite;
+}
+
+.place-card{
+  gap: 0.5em;
+}
+
+  .culture {  
     display: grid;
     grid-template: 100%/ 15% 85%;
     
@@ -1208,4 +1246,445 @@ footer ul li {
     background: linear-gradient( 90deg, transparent 35%, #325c74 35%, #325c74 65%, transparent 65% ),
      linear-gradient(transparent 45%, #b0e0e6 45%, #b0e0e6 50%, transparent 50%);
   }
+
+  /* place gallery */
+
+  .gallery-grid {
+    margin-left:-5em;
+  }
+  
+  .gallery-img-container {
+    width: 200px;
+    margin: 1em;
+    opacity: 0.85;
+    filter: blur(1px);
+    position:relative;
+    
+  }
+  
+  .active-image {
+    width: 400px;
+    height: auto;
+    opacity: 1;
+    filter: blur(0);
+    filter: drop-shadow(0 0 3em #000);
+    
+  }
+
+  /* food grid */
+
+  .food-grid {
+    width:100%;
+    height:120vh;
+    display: grid;
+    grid-template: 1.25fr 1.5fr 1.25fr/ repeat(6, 1fr);
+    padding:0;
+    gap: 0.25em;
+    margin: 3em 0;
+  }
+  
+  .food-container-1 {
+    grid-column:4/ span 3;
+    grid-row:1/ span 1;
+    
+  }
+  
+  .food-container-2 {
+    grid-column:4/ span 3;
+    grid-row:3/span 1;
+    
+  }
+  
+  .food-container-3 {
+    grid-column:1/ span 2;
+    grid-row:2/span 1;
+    
+  }
+  
+  .food-container-4 {
+    grid-column:5/ span 2;
+    grid-row:2/span 1;
+    
+  }
+  
+  .food-content {
+    grid-column:1/ span 3;
+    grid-row:1/2;
+    padding: 0.5em;
+    
+  }
+  
+  .food-content-2 {
+    grid-column:3/ span 2;
+    grid-row:2/span 1;
+    padding: 0 0.5em;
+    
+    
+  }
+  
+  .food-content-3 {
+    grid-column:1/ span 3;
+    grid-row:3/span 1;
+    padding: 1.25em;
+   
+  }  
+    
+}
+
+@media(max-width:424px){
+  html{
+    font-size:12px;
+  }
+
+  header {
+    height: 100vh;
+    background-image: url(/images/header-image.jpg);
+    padding-left: 0;
+    background-attachment: fixed;
+    align-items: center;
+}
+
+
+h1{ 
+  font-size:2.15rem;
+  text-align:center;
+}
+
+  header p {
+    width: 70%;
+    color: #fff;
+    font-size: 1.15rem;
+    text-align:center;
+}
+
+.food-intro-section {
+  height: 100vh;
+  display: grid;
+  grid-template: repeat(2, 1fr) / 100%;
+}
+
+.food-carousel{
+  grid-row:1/2;
+  
+}
+
+.food-carousel-block {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+
+.food-carousel-block:nth-child(1) {
+  top: -15%;
+  left: -15%;
+  
+}
+
+.food-carousel-block:nth-child(2) {
+  top: -15%;
+  right: -15%;
+  
+}
+
+.food-carousel-block:nth-child(3) {
+  bottom: -15%;
+  right: -15%;
+  
+}
+
+.food-carousel-block:nth-child(4) {
+  bottom: -15%;
+  left: -15%;
+}
+
+.ring {
+  position: absolute;
+  width: 40em;
+  height: 40em;
+  border: 6em solid #325c74;
+  outline: 0.25em solid #b0e0e6;
+  border-radius: 50%;
+  top: -20em;
+  right: -20em;
+  animation: rotate 8s ease-in-out infinite;
+}
+
+.modal img {
+  width:100%;
+  height:auto;
+  grid-column:2/3;
+  grid-row: 2/3;
+}
+
+.modal.open {
+  display: grid;
+  grid-template: 10% 80% 10% / 10% 80% 10%;
+  place-items: center;
+}
+
+.culture {
+  height:auto;
+  display: grid;
+  grid-template:10% 80%/100%;
+  margin: 5em 0;
+  scroll-margin-top: 3.5em;
+}
+
+.culture-title {
+  writing-mode: horizontal-tb;
+  text-orientation: upright;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: 0.2em;
+}
+
+.border-right{
+   border-right:none;
+}
+
+.culture-cards-block {
+  display: grid;
+  grid-template: 350px 350px 350px / 100%;
+  padding: 0 1em;
+  gap:1em;
+}
+
+.culture-card {
+  position: absolute;
+  width: 70%;
+  height: 95%;
+  display: grid;
+  grid-template: 60% 40% / 100%;
+}
+
+.places-to-vist {
+  margin: 10em 0 3em 0;
+}
+
+.places-grid {
+  width: 90%;
+  max-width: 1450px;
+  margin: 4em 0;
+  display: grid;
+  grid-template: 350px 350px 350px 350px / 100%;
+  gap: 1em;
+}
+
+.place-card {
+  display: grid;
+  grid-template: 55% 45%/100%;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.top-attractions {
+  height: auto;
+  width: 90%;
+  position: relative;
+  display: grid;
+  grid-template: 500px 500px 500px 500px / 100%;
+  margin-top: 3em;
+  gap:1em;
+}
+
+.attraction {
+  z-index: 4;
+  display: grid;
+  grid-template: 55% 10% 35%/100%;
+}
+
+.info-blocks {
+  width: 93%;
+  background-color: #fff;
+  box-shadow: 0 0 1.5em #34607736;
+  border-radius: 0.5em;
+  padding: 2em;
+  margin-bottom: 3em;
+  scroll-margin-top: 4em;
+}
+
+.info-blocks ul, .info-blocks dl {
+  margin: 2em 0 0 0.5em;
+}
+
+.info-blocks dl dt {
+  font-size: 1em;
+}
+
+.count {
+  font-size: 1rem;
+  width: 2.5em;
+  height: 2.5em;
+    
+}
+
+.upper-block {
+  width: 93%;
+  padding: 0.5em;
+  display: grid;
+  grid-template: 50px 100px 100px / 100%;
+}
+
+.upper-block .footer-div ul{
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  align-items: start;
+}
+
+.upper-block .footer-div ul li{
+  margin:1em 1.5em;
+}
+
+.footer-border-left-right {
+  border: 2px solid #b0e0e6;
+  border-right: none;
+  border-left: none;
+}
+
+.bottom-block h3 {
+  width: 80%;
+  background: linear-gradient( 90deg, transparent 25%, #325c74 25%, #325c74 75%, transparent 75% ), 
+  linear-gradient(transparent 45%, #b0e0e6 45%, #b0e0e6 50%, transparent 50%);
+}
+
+ /* place gallery */
+
+ .gallery-grid {
+  margin-left:-7em;
+}
+
+.gallery-img-container {
+  width: 100px;
+  margin: 1em;
+  opacity: 0.85;
+  
+}
+
+.active-image {
+  width: 300px;
+  
+}
+
+
+@keyframes zoomInActiveLeft {
+  0% {
+  
+    margin:3em 0 0 4em;
+    transform: scale(0.5);
+  }
+
+  100% {
+    
+    transform: scale(1);
+  }
+}
+
+
+@keyframes zoomInActiveRight {
+  0% {
+  
+    margin:3em 0 0 -4em;
+    transform: scale(0.5);
+  }
+
+  100% {
+    
+    transform: scale(1);
+  }
+}
+
+
+@keyframes zoomOutPreviousLeft {
+  0% {
+    margin:3em 0 0 4em;
+    transform: scale(1.75);
+  }
+
+  100% {
+   
+    transform: scale(1);
+  }
+}
+
+
+@keyframes zoomOutPreviousRight {
+  0% {
+   
+    margin:3em 0  0 -3em;
+    transform: scale(1.5);
+  }
+
+  100% {
+  
+    transform: scale(1);
+  }
+}
+
+
+
+ /* food grid */
+
+ .food-grid {
+  width:100%;
+  height:auto;
+  display: grid;
+  grid-template: 200px 300px 200px 200px 200px/ repeat(4,1fr);
+  padding:0;
+  gap: 0.25em;
+  margin: 3em 0;
+}
+
+.food-container-1 {
+  grid-row:1/ span 1;
+  grid-column:1/-1;
+  
+}
+
+.food-container-2 {
+  grid-column:1/ span 2;
+  grid-row:4/span 1;
+  
+  
+}
+
+.food-container-3 {
+  grid-column:3/ span 2;
+  grid-row:2/3;
+  
+  
+}
+
+.food-container-4 {
+  grid-column:1/ span 2;
+  grid-row:3/4;
+  
+}
+
+.food-content {
+  grid-column:1/ span 2;
+  grid-row:2/3;
+  padding: 0.5em;
+  
+}
+
+.food-content-2 {
+  grid-column:3/ span 2;
+  grid-row:3/5;
+  padding: 0.5em;
+  
+  
+}
+
+.food-content-3 {
+  grid-column:1/ -1;
+  grid-row:5/6;
+  padding: 0.5em;
+ 
+} 
+}
+
+@media(min-width:320px) and (max-width:375px){
+ 
 }
