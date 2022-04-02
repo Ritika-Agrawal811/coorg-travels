@@ -8,5 +8,5 @@ It is a responsive webpage built using HTML, CSS and JavaScript.
  ## Screenshots :point_down:
  Desktop View | Mobile View
  ------------ | ------------- 
-<img src="https://res.cloudinary.com/djix6uusx/image/upload/v1647791310/screencapture-planet-points-vercel-app-2022-03-20-21_17_45_r4ence.png"/>  | <img src="https://res.cloudinary.com/djix6uusx/image/upload/v1647791397/screencapture-127-0-0-1-5501-index-html-2022-03-20-21_19_34_jwsdwh.png"/> 
+<img src="https://res.cloudinary.com/djix6uusx/image/upload/v1648884093/screencapture-127-0-0-1-5500-index-html-2022-04-02-12_46_28_efrtfo.png"/>  | <img src="https://res.cloudinary.com/djix6uusx/image/upload/v1648883946/screencapture-127-0-0-1-5500-index-html-2022-04-02-12_46_57_lwaefd.png"/> 
 
