@@ -1406,7 +1406,7 @@ h1{
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     transition: all 750ms ease-in-out;
     z-index:5;
   }
@@ -1415,6 +1415,7 @@ h1{
     color:#000;
     text-decoration: none;
     font-size:1.2rem;
+    margin:1em 0;
   }
 
   .mobile-menu.open{
